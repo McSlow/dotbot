@@ -8,8 +8,30 @@ Dotbot makes installing your dotfiles as easy as `git clone $url && cd dotfiles
 
 This is a clone of anishathalye/dotbot. It intends to add some "team" functionality, with mixed and personalized dotfiles.
 
-Something like that dotfiles/bashrc_johndoe takes precendence over dotfiles/bashrc if existent when $USER env is set to 'johndoe'.
- 
+Here it is: added userlinks plugin
+
+"userlinks" behaves like the links directive but also looks for a source
+named <file>_$USER, where $USER is the USER Environment Variable,
+usually set to your Username ( check "echo $USER" ).
+This is for Teams which want to share dotfiles, but if individuals want
+to opt out, they can create their own version.
+
+Example:
+A Team shares their .ssh/config, but religious war begins when it's
+coming to .vimrc.
+No Problem anymore:
+create dotfiles/vimrc_johndoe
+
+in your install.conf.yaml create a section like this:
+- userlink: 
+  ~/.vimrc: vimrc
+
+Note that you do not need to source vimrc_johndoe. If the file doesn't
+exist, it still reverts to vimrc. If a user opts out of the default,
+he/she simply can add a <file>_<username> version. Note that username
+must be all lowercase. 
+
+
 
 
 ---
