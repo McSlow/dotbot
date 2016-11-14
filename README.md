@@ -6,6 +6,14 @@ Dotbot makes installing your dotfiles as easy as `git clone $url && cd dotfiles
 
 ---
 
+This is a clone of anishathalye/dotbot. It intends to add some "team" functionality, with mixed and personalized dotfiles.
+
+Something like that dotfiles/bashrc_johndoe takes precendence over dotfiles/bashrc if existent when $USER env is set to 'johndoe'.
+ 
+
+
+---
+
 [![Build Status](https://travis-ci.org/anishathalye/dotbot.svg?branch=master)](https://travis-ci.org/anishathalye/dotbot)
 
 Dotbot is a tool that bootstraps your dotfiles (it's a [Dot]files
